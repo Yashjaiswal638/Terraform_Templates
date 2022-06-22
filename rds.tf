@@ -8,9 +8,10 @@ resource "aws_db_instance" "default" {
   username             = "root"
   password             = "test1234"
   parameter_group_name = "default.mysql5.7"
+  vpc_id = "${aws_vpc.qa-prod-vpc.id}"
+
   storage_encrypted = true
   kms_key_id = "${aws_kms_key.my_kms_key.arn}"
-  vpc_id = "${aws_vpc.qa-prod-vpc.id}"
   skip_final_snapshot  = true
   depends_on = [aws_kms_key.my_kms_key, aws_vpc.qa-prod-vpc]
 

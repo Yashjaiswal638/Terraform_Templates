@@ -1,2 +1,2 @@
 # testTerraform
-# Basic Terraform templates for AWS Cloud
+Basic Terraform templates for AWS Cloud
